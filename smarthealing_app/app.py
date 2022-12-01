@@ -59,7 +59,7 @@ st.set_page_config(
 if "params" not in st.session_state:
     st.session_state['params'] = dict()
 
-st.markdown('<style>' + open('./style/style.css').read() + '</style>', unsafe_allow_html=True)
+st.markdown('<style>' + open('style.css').read() + '</style>', unsafe_allow_html=True)
 
 with st.sidebar:
         tabs = on_hover_tabs(tabName=['Dashboard', 'Input Tab', 'Economy'], 
