@@ -1,0 +1,6 @@
+streamlit
+streamlit-on-Hover-tabs
+pandas 
+datetime
+requests 
+bs4 
