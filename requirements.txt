@@ -1,7 +1,6 @@
 streamlit
 streamlit-on-Hover-tabs
 pandas 
-datetime
-requests
-time 
+datemtime
+requests 
 bs4 
