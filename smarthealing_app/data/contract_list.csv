@@ -1,0 +1,51 @@
+clave,denominacion
+000,Null
+100,Indefinido	Tiempo completo		Ordinario	
+109,Indefinido	Tiempo completo		Fomento contratación/ Empleo estable Transformación contrato temporal
+130,Indefinido	Tiempo completo		Minusválidos	
+131,Indefinido	Tiempo completo		Minusválidos	Centro especial empleo
+139,Indefinido	Tiempo completo		Minusválidos	Transformación contrato temporal
+141,Indefinido	Tiempo completo		Relevo	
+150,Indefinido	Tiempo completo		Fomento contratación indefinido/ Empleo estable	Inicial
+151,Indefinido	Tiempo completo		Fomento contratación indefinida/ Empleo estable	Exclusión social
+189,Indefinido	Tiempo completo			Transformación contrato temporal
+200,Indefinido	Tiempo parcial		Ordinario	
+209,Indefinido	Tiempo parcial		Fomento Contratación indefinida/ Empleo estable	Transformación contrato temporal
+230,Indefinido	Tiempo parcial		Minusválidos	
+231,Indefinido	Tiempo parcial		Minusválidos	Centro especial empleo
+239,Indefinido	Tiempo parcial		Minusválidos	Transformación contrato temporal
+241,Indefinido	Tiempo parcial		Relevo	
+250,Indefinido	Tiempo parcial		Fomento contratación/ Empleo estable	Inicial
+251,Indefinido	Tiempo parcial		Fomento contratación/ Empelo estable	Exclusión social
+289,Indefinido	Tiempo parcial			Transformación contrato temporal
+300,Indefinido		Fijo/Discontinuo		
+309,Indefinido		Fijo/Discontinuo	Fomento contratación/ Empleo estable	Transformación contrato temporal
+330,Indefinido		Fijo/Discontinuo	Minusválidos	
+331,Indefinido		Fijo/Discontinuo	Minusválidos	Centro especial empleo
+350,Indefinido		Fijo/Discontinuo	Fomento contratación indefinido/ Empleo estable	Inicial
+351,Indefinido		Fijo/Discontinuo	Fomento contratación indefinida/ Empleo estable	Exclusión social
+389,Indefinido		Fijo/Discontinuo		Transformación contrato temporal
+401,Duración determinada	Tiempo completo		Obra o servicio determinado	
+402,Duración determinada	Tiempo completo		Eventual por circunstancias de producción	
+403,Duración determinada	Tiempo completo		Inserción	
+408,Temporal	Tiempo completo			Carácter administrativo
+410,Duración temporal	Tiempo completo		Interinidad	
+418,Duración determinada	Tiempo completo		Interinidad	Carácter administrativo
+420,Temporal	Tiempo completo		Prácticas	
+421,Temporal	Tiempo completo		Formación	
+430,Temporal	Tiempo completo		Minusválidos	
+431,Temporal	Tiempo completo		Minusválidos	Centro especial empleo
+441,Temporal	Tiempo completo		Relevo	
+451,Temporal	Tiempo completo		Fomento contratación indefinida/ Empleo estable	Exclusión social
+501,Duración determinada	Tiempo parcial		Obra o servicio determinado	
+502,Duración determinada	Tiempo parcial		Eventual por circunstancias de la producción	
+503,Duración determinada	Tiempo parcial		Inserción	
+508,Temporal	Tiempo parcial			Carácter administrativo
+510,Duración determinada	Tiempo parcial		Interinidad	
+518,Duración determinada	Tiempo parcial		Interinidad	Carácter administrativo
+520,Temporal	Tiempo parcial		Prácticas	
+530,Temporal	Tiempo parcial		Minusválidos	
+531,Temporal	Tiempo parcial		Minusválidos	Centro especial empleo
+540,Temporal	Tiempo parcial		Jubilado parcial	
+541,Temporal	Tiempo parcial		Relevo	
+551,Temporal	Tiempo parcial		Fomento contratación indefinida/ Empleo estable	Exclusión social
