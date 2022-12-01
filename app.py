@@ -104,7 +104,7 @@ elif tabs == 'Input Tab':
     c1, c2 = st.columns(2)
     with c1:
         # CNAE category
-        cnae_df = pd.read_csv('../smarthealing_app/data/cnae_list.csv', sep = '.-', dtype='string') 
+        cnae_df = pd.read_csv('./smarthealing_app/data/cnae_list.csv', sep = '.-', dtype='string') 
         cnae_select = st.selectbox('Input CNAE Category:', (cnae_df['Code'] + ' - ' + cnae_df['Description']).tolist())
         cnae = cnae_select[:4]
         st.write('You selected: ', cnae)
@@ -136,7 +136,7 @@ elif tabs == 'Input Tab':
         
     with c3:
         # Codigo Postal
-        postal_df = pd.read_csv('../smarthealing_app/data/postal_list.csv', sep = ',', dtype='string') 
+        postal_df = pd.read_csv('./smarthealing_app/data/postal_list.csv', sep = ',', dtype='string') 
         
         postal = st.selectbox('Input Contract Type:', (postal_df['codigopostalid'] + ' - ' + postal_df['provincia'] + ' - ' + postal_df['poblacion']).tolist())
         # Selecting just description from DF, idk why it wasn't working the simple way
@@ -161,7 +161,7 @@ elif tabs == 'Input Tab':
     c1, c2 = st.columns(2)
     # Type of contract
     with c1:
-        contract_df = pd.read_csv('../smarthealing_app/data/contract_list.csv', sep = ',', dtype='string') 
+        contract_df = pd.read_csv('./smarthealing_app/data/contract_list.csv', sep = ',', dtype='string') 
         contract = st.selectbox('Input Contract Type:', (contract_df['clave'] + ' - ' + contract_df['denominacion']).tolist())
         # Selecting just description from DF, idk why it wasn't working the simple way
         contract = contract[:3]
@@ -169,7 +169,7 @@ elif tabs == 'Input Tab':
     
     with c2:
         # Cotization group 
-        coti_df = pd.read_csv('../smarthealing_app/data/coti_list.csv', sep = ':', dtype='string') 
+        coti_df = pd.read_csv('./smarthealing_app/data/coti_list.csv', sep = ':', dtype='string') 
         contribution = st.selectbox('Select contribution group:',
             options=(coti_df['description'].to_list()))
         # Selecting just description from DF, idk why it wasn't working the simple way
