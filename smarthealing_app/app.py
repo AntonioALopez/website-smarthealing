@@ -301,15 +301,15 @@ elif tabs == 'Results':
     import pydeck as pdk
 
     chart_data = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [40.416775,-3.703790],
+    np.random.randn(250, 2) / [2, 1] + [40.416775,-3.703790],
     columns=['lat', 'lon'])
 
     st.pydeck_chart(pdk.Deck(
         map_style=None,
         initial_view_state=pdk.ViewState(
-            latitude=37.76,
-            longitude=-122.4,
-            zoom=11,
+            latitude=40.416775,
+            longitude=-3.703790,
+            zoom=5,
             pitch=50,
         ),
         layers=[
