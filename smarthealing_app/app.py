@@ -228,10 +228,10 @@ elif tabs == 'Input Tab':
                 "ContadorBajasDNI": int(bajas_worker),
                 "sexo": int(sex),
                 "cnae": int(cnae),
-                "icd9": str(icd9),
+                "icd9": str(idc9_select),
                 "recaida": int(setback),
                 "numtreb": int(num_workers),
-                "codipostal": str(postal),
+                "codipostal": int(postal),
                 "ContadordiasBajasDNI": int(day_counter),
                 "contracte": int(contract),
                 "grupcoti": int(selection_coti),
@@ -251,8 +251,7 @@ elif tabs == 'Input Tab':
         prediction = requests.get(url,params)
         duracion_baja = prediction.json().get('leave_duration')
         st.title(f" Predicted duration: {int(round(duracion_baja,0))} days")
-        
-        st.write(selection_cnae['Description'].iloc[0])
+
         
     
 # ================================================================================================================
