@@ -68,6 +68,17 @@ with st.sidebar:
 if tabs =='Dashboard':
     st.title("Navigation Bar")
     st.write('Name of option is {}'.format(tabs))
+    
+    url_lottie = 'https://assets1.lottiefiles.com/private_files/lf30_y9czxcb9.json'
+    def load_lottieurl(url: str):
+        r = requests.get(url)
+        if r.status_code != 200:
+            return None
+        return r.json()
+
+    lottie_json = load_lottieurl(url_lottie)
+    st_lottie(lottie_json)
+    st_lottie_spinner(lottie_json)
 
 # ================================================================================================================
 # Tab where we input the data
@@ -257,9 +268,8 @@ elif tabs == 'Results':
     if len(st.session_state["params"]) > 0:
         st.write(st.session_state["params"])
     st.write('Name of option is {}'.format(tabs))
-    url_lottie = 'https://assets1.lottiefiles.com/private_files/lf30_y9czxcb9.json'
     
-
+    url_lottie = 'https://assets1.lottiefiles.com/private_files/lf30_y9czxcb9.json'
     def load_lottieurl(url: str):
         r = requests.get(url)
         if r.status_code != 200:
@@ -268,6 +278,5 @@ elif tabs == 'Results':
 
     lottie_json = load_lottieurl(url_lottie)
     st_lottie(lottie_json)
-
     st_lottie_spinner(lottie_json)
  
