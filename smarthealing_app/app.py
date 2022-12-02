@@ -293,7 +293,7 @@ elif tabs == 'Results':
         np.random.randn(250, 2) / [2, 1] + [40.416775,-3.703790],
         columns=['lat', 'lon'])
 
-    postal_df  
+    postal_df.drop(columns=['provincia', 'poblacion'], inplace=True)
     st.map(postal_df)
 # ================================================================
     import pydeck as pdk
