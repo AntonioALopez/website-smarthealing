@@ -5,6 +5,8 @@ from datetime import date
 import requests
 import time as t
 from bs4 import BeautifulSoup as bs
+from streamlit_lottie import st_lottie
+from streamlit_lottie import st_lottie_spinner
 
 base = 'https://en.wikipedia.org/'
 icd9_wiki = 'https://en.wikipedia.org/wiki/List_of_ICD-9_codes'
@@ -49,11 +51,6 @@ st.set_page_config(
     page_icon='⚕️',
     layout="wide",
     initial_sidebar_state="auto",
-    menu_items={
-        'Get Help': 'https://www.extremelycoolapp.com/help',
-        'Report a bug': "https://www.extremelycoolapp.com/bug",
-        'About': "# This is a header. This is an *extremely* cool app!"
-    }
 )
 
 if "params" not in st.session_state:
@@ -260,6 +257,20 @@ elif tabs == 'Economy':
     if len(st.session_state["params"]) > 0:
         st.write(st.session_state["params"])
     st.write('Name of option is {}'.format(tabs))
-
+    url_lottie = 'https://assets1.lottiefiles.com/private_files/lf30_y9czxcb9.json'
     
 
+    def load_lottieurl(url: str):
+        r = requests.get(url)
+        if r.status_code != 200:
+            return None
+        return r.json()
+
+    lottie_url = "https://assets5.lottiefiles.com/packages/lf20_V9t630.json"
+    lottie_json = load_lottieurl(lottie_url)
+    st_lottie(lottie_json)
+
+    if st.button("Download"):
+        with st_lottie_spinner(lottie_json)
+            t.sleep(5)
+        st.balloons()

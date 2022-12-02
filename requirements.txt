@@ -4,3 +4,4 @@ pandas
 datetime
 requests 
 bs4 
+streamlit-lottie
