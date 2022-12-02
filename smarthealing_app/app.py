@@ -90,7 +90,7 @@ elif tabs == 'Input Tab':
     st.write('Name of tab is {}'.format(tabs))
     # with st.form(key='columns_in_form'):
     # 1st Line
-    c1, c2, c3 = st.columns(3)
+    c1, c2, c3 = st.columns(2)
     with c1:
         # Number of leaves per company 
         bajas_empresa = st.number_input('Input number of leaves in company:',min_value=0, max_value=5000000)
@@ -100,16 +100,22 @@ elif tabs == 'Input Tab':
         # Number of leaves per worker
         bajas_worker = st.number_input('Input number of leaves of worker:',min_value=0, max_value=5000000)
         st.write('You selected: ', bajas_worker)
-    
-    # 2nd Line
-    c1, c2 = st.columns(2)
-    with c1:
+    with c3:
         # CNAE category
         cnae_df = pd.read_csv('./smarthealing_app/data/cnae_list.csv', sep = '.-', dtype='string') 
         cnae_select = st.selectbox('Input CNAE Category:', (cnae_df['Code'] + ' - ' + cnae_df['Description']).tolist())
         cnae = cnae_select[:4]
         st.write('You selected: ', cnae)
-        
+    
+    # 2nd Line
+    c1, c2 = st.columns(2)   
+    with c1:
+        # Day of the week 
+        options=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+        day_week = st.select_slider('Select day of the week on leave: ',
+            options=options)
+        week_day = options.index(day_week) + 1
+        st.write('You select: ', week_day)     
     with c2:
         # ICD9 category
         valid_characters = ['M','V','E','m','b','e','1','2','3','4','5','6','7','8','9','0','.']
@@ -176,13 +182,6 @@ elif tabs == 'Input Tab':
         # Selecting just description from DF, idk why it wasn't working the simple way
         selection_coti = coti_df[coti_df['description']==contribution]['category'].iloc[0]
         st.write('You selected: ', selection_coti)
-    
-    # Day of the week 
-    options=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-    day_week = st.select_slider('Select day of the week on leave: ',
-        options=options)
-    week_day = options.index(day_week) + 1
-    st.write('You select: ', week_day)
     
     # 2nd Line
     c1, c2 = st.columns(2)
