@@ -259,9 +259,11 @@ elif tabs == 'Input Tab':
         # API CALL
         url = "https://smarthealing-w5jxjldzkq-ew.a.run.app/predict"
 
-        prediction = requests.get(url,params)
-        duracion_baja = prediction.json().get('leave_duration')
-        st.title(f" Predicted duration: {int(round(duracion_baja,0))} days")
+        with st.spinner('Fetching your prediction...'):
+            prediction = requests.get(url,params)
+            duracion_baja = prediction.json().get('leave_duration')
+            st.title(f" Predicted duration: {int(round(duracion_baja,0))} days")
+        st.success('Done!')
     
 # ================================================================================================================
 elif tabs == 'Results':
