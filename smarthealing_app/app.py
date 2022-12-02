@@ -269,5 +269,5 @@ elif tabs == 'Results':
     lottie_json = load_lottieurl(url_lottie)
     st_lottie(lottie_json)
 
-    st_lottie_spinner(lottie_json):
+    st_lottie_spinner(lottie_json)
  
