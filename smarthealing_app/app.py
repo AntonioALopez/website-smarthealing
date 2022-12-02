@@ -300,7 +300,6 @@ elif tabs == 'Results':
     def lon(X):
         return f"{X.lon.split(',')[0]}.{''.join(X.lon.split(',')[1:])}"
 
-    postal_df = pd.read_csv('data/postal_list.csv')
     postal_df['lat'] = postal_df.apply(lat, axis=1)
     postal_df['lon'] = postal_df.apply(lon, axis=1)
 
