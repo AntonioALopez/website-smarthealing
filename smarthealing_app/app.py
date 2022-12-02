@@ -289,11 +289,22 @@ elif tabs == 'Results':
     
 # ================================================================
     postal_df = pd.read_csv('./smarthealing_app/data/postal_list.csv', sep = ',', dtype='string') 
+    
     df = pd.DataFrame(
         np.random.randn(250, 2) / [2, 1] + [40.416775,-3.703790],
         columns=['lat', 'lon'])
+    
+    def lat(X):
+        return f"{X.lat.split(',')[0]}.{''.join(X.lat.split(',')[1:])}"
 
-    postal_df.drop(columns=['provincia', 'poblacion'], inplace=True)
+    def lon(X):
+        return f"{X.lon.split(',')[0]}.{''.join(X.lon.split(',')[1:])}"
+
+    postal_df = pd.read_csv('data/postal_list.csv')
+    postal_df['lat'] = postal_df.apply(lat, axis=1)
+    postal_df['lon'] = postal_df.apply(lon, axis=1)
+
+    postal_df.drop(columns=['provincia', 'poblacion', 'codigopostalid'], inplace=True)
     st.map(postal_df)
 # ================================================================
     import pydeck as pdk
