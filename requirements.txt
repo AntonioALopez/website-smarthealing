@@ -1,7 +1,7 @@
 streamlit
+streamlit-lottie
 streamlit-on-Hover-tabs
 pandas 
 datetime
 requests 
-bs4 
-streamlit-lottie
+bs4
