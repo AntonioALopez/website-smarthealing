@@ -271,6 +271,6 @@ elif tabs == 'Economy':
     st_lottie(lottie_json)
 
     if st.button("Download"):
-        with st_lottie_spinner(lottie_json)
+        with st_lottie_spinner(lottie_json):
             t.sleep(5)
         st.balloons()
