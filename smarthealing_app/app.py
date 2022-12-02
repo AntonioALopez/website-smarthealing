@@ -266,11 +266,9 @@ elif tabs == 'Economy':
             return None
         return r.json()
 
-    lottie_url = "https://assets5.lottiefiles.com/packages/lf20_V9t630.json"
-    lottie_json = load_lottieurl(lottie_url)
+    lottie_json = load_lottieurl(url_lottie)
     st_lottie(lottie_json)
 
-    if st.button("Download"):
-        with st_lottie_spinner(lottie_json):
-            t.sleep(5)
-        st.balloons()
+    with st_lottie_spinner(lottie_json):
+        t.sleep(5)
+    st.balloons()
