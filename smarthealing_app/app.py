@@ -301,7 +301,7 @@ elif tabs == 'Results':
     import pydeck as pdk
 
     chart_data = pd.DataFrame(
-    np.random.randn(100000, 2) / [2, 1] + [40.416775,-3.703790],
+    np.random.randn(100, 2) / [2, 1] + [40.416775,-3.703790],
     columns=['lat', 'lon'])
 
     st.pydeck_chart(pdk.Deck(
@@ -317,7 +317,7 @@ elif tabs == 'Results':
             'HexagonLayer',
             data=chart_data,
             get_position='[lon, lat]',
-            radius=200,
+            radius=20000,
             elevation_scale=4,
             elevation_range=[0, 1000],
             pickable=True,
