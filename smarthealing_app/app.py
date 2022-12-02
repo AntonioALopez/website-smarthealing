@@ -66,7 +66,7 @@ with st.sidebar:
 # ===============================================================================================================
 # Tab Dashboard
 if tabs =='Dashboard':
-    st.title("Navigation Bar")
+    st.title("Dashboard")
     st.write('Name of option is {}'.format(tabs))
     
     url_lottie = 'https://assets1.lottiefiles.com/private_files/lf30_y9czxcb9.json'
