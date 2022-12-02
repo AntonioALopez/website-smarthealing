@@ -224,35 +224,35 @@ elif tabs == 'Input Tab':
             my_bar.progress(percent_complete + 1)
         st.write('Data saved! 💾')
         
-        # params = {"ContadorBajasCCC": int(bajas_empresa),
-        #         "ContadorBajasDNI": int(bajas_worker),
-        #         "sexo": int(sex),
-        #         "cnae": int(cnae),
-        #         "icd9": str(icd9),
-        #         "recaida": int(setback),
-        #         "numtreb": int(num_workers),
-        #         "codipostal": str(postal),
-        #         "ContadordiasBajasDNI": int(day_counter),
-        #         "contracte": int(contract),
-        #         "grupcoti": int(selection_coti),
-        #         "pluriempleo": int(multi_job),
-        #         "diasemana": int(week_day),
-        #         "tiempo_en_empresa": float(result_year),
-        #         "edad": float(age),
-        #         "mes_baja": int(month),
-        #         "epiweek": int(week)
-        #     }
-        # st.session_state["params"] = params.copy()
-        # st.write(params)
+        params = {"ContadorBajasCCC": int(bajas_empresa),
+                "ContadorBajasDNI": int(bajas_worker),
+                "sexo": int(sex),
+                "cnae": int(cnae),
+                "icd9": str(icd9),
+                "recaida": int(setback),
+                "numtreb": int(num_workers),
+                "codipostal": str(postal),
+                "ContadordiasBajasDNI": int(day_counter),
+                "contracte": int(contract),
+                "grupcoti": int(selection_coti),
+                "pluriempleo": int(multi_job),
+                "diasemana": int(week_day),
+                "tiempo_en_empresa": float(result_year),
+                "edad": float(age),
+                "mes_baja": int(month),
+                "epiweek": int(week)
+            }
+        st.session_state["params"] = params.copy()
+        st.write(params)
         
         # API CALL
-        # url = "https://smarthealing-w5jxjldzkq-ew.a.run.app/predict"
+        url = "https://smarthealing-w5jxjldzkq-ew.a.run.app/predict"
 
-        # prediction = requests.get(url,params)
-        # duracion_baja = prediction.json().get('leave_duration')
-        # st.title(f" Predicted duration: {int(round(duracion_baja,0))} days")
+        prediction = requests.get(url,params)
+        duracion_baja = prediction.json().get('leave_duration')
+        st.title(f" Predicted duration: {int(round(duracion_baja,0))} days")
         
-        # st.write(selection_cnae['Description'].iloc[0])
+        st.write(selection_cnae['Description'].iloc[0])
         
     
 # ================================================================================================================
