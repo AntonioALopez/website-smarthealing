@@ -90,7 +90,7 @@ elif tabs == 'Input Tab':
     st.write('Name of tab is {}'.format(tabs))
     # with st.form(key='columns_in_form'):
     # 1st Line
-    c1, c2, c3 = st.columns(2)
+    c1, c2, c3 = st.columns(3)
     with c1:
         # Number of leaves per company 
         bajas_empresa = st.number_input('Input number of leaves in company:',min_value=0, max_value=5000000)
