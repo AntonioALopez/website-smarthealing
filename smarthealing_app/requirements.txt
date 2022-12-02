@@ -7,3 +7,4 @@ datetime
 requests 
 bs4
 plotly
+scipy
