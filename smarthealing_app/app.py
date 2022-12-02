@@ -300,6 +300,7 @@ elif tabs == 'Results':
     def lon(X):
         return f"{X.lon.split(',')[0]}.{''.join(X.lon.split(',')[1:])}"
 
+    df['Postal Code'] = postal_df['codigopostalid']
     df['lat'] = postal_df.apply(lat, axis=1)
     df['lon'] = postal_df.apply(lon, axis=1)
 
