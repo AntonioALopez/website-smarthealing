@@ -301,7 +301,7 @@ elif tabs == 'Results':
     import pydeck as pdk
 
     chart_data = pd.DataFrame(
-    np.random.randn(250, 2) / [2, 1] + [40.416775,-3.703790],
+    np.random.randn(100000, 2) / [2, 1] + [40.416775,-3.703790],
     columns=['lat', 'lon'])
 
     st.pydeck_chart(pdk.Deck(
