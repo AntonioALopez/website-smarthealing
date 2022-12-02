@@ -1,6 +1,7 @@
 streamlit
 streamlit-lottie
 streamlit-on-Hover-tabs
+numpy
 pandas 
 datetime
 requests 

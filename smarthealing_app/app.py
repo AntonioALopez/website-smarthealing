@@ -1,6 +1,7 @@
 from st_on_hover_tabs import on_hover_tabs
 import streamlit as st
 import pandas as pd
+import numpy as np
 from datetime import date
 import requests
 import time as t
