@@ -101,16 +101,6 @@ elif tabs == 'Input Tab':
         bajas_worker = st.number_input('Input number of leaves of worker:',min_value=0, max_value=5000000)
         st.write('You selected: ', bajas_worker)
     
-    with c3:
-        # Sex of worker
-        sex_select = st.selectbox('Select sex:',
-            ('Masculine', 'Femenine'))
-        if sex_select == 'Masculine':
-            sex = 1
-        else: 
-            sex = 2
-        st.write('You selected: ', sex_select)
-    
     # 2nd Line
     c1, c2 = st.columns(2)
     with c1:
@@ -149,7 +139,7 @@ elif tabs == 'Input Tab':
         # Codigo Postal
         postal_df = pd.read_csv('./smarthealing_app/data/postal_list.csv', sep = ',', dtype='string') 
         
-        postal = st.selectbox('Input Contract Type:', (postal_df['codigopostalid'] + ' - ' + postal_df['provincia'] + ' - ' + postal_df['poblacion']).tolist())
+        postal = st.selectbox('Input Postal Code', (postal_df['codigopostalid'] + ' - ' + postal_df['provincia'] + ' - ' + postal_df['poblacion']).tolist())
         # Selecting just description from DF, idk why it wasn't working the simple way
         postal = postal.split(' ')[0]
         st.write('You selected: ',postal)
@@ -237,7 +227,7 @@ elif tabs == 'Input Tab':
         
         params = {"ContadorBajasCCC": int(bajas_empresa),
                 "ContadorBajasDNI": int(bajas_worker),
-                "sexo": int(sex),
+                "sexo": int(1),
                 "cnae": int(cnae),
                 "icd9": str(idc9_select),
                 "recaida": int(setback),
