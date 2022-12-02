@@ -300,9 +300,11 @@ elif tabs == 'Results':
     def lon(X):
         return f"{X.lon.split(',')[0]}.{''.join(X.lon.split(',')[1:])}"
 
-    postal_df['lat'] = round(postal_df.apply(lat, axis=1),6)
-    postal_df['lon'] = round(postal_df.apply(lon, axis=1),6)
+    postal_df['lat'] = postal_df.apply(lat, axis=1)
+    postal_df['lon'] = postal_df.apply(lon, axis=1)
 
+    postal_df
+    
     st.map(postal_df)
 # ================================================================
     import pydeck as pdk
