@@ -7,6 +7,8 @@ import time as t
 from bs4 import BeautifulSoup as bs
 from streamlit_lottie import st_lottie
 from streamlit_lottie import st_lottie_spinner
+import plotly.figure_factory as ff
+
 
 base = 'https://en.wikipedia.org/'
 icd9_wiki = 'https://en.wikipedia.org/wiki/List_of_ICD-9_codes'
@@ -269,14 +271,21 @@ elif tabs == 'Results':
         st.write(st.session_state["params"])
     st.write('Name of option is {}'.format(tabs))
     
-    url_lottie = 'https://assets1.lottiefiles.com/private_files/lf30_y9czxcb9.json'
-    def load_lottieurl(url: str):
-        r = requests.get(url)
-        if r.status_code != 200:
-            return None
-        return r.json()
+   
+    # Add histogram data
+    x1 = np.random.randn(200) - 2
+    x2 = np.random.randn(200)
+    x3 = np.random.randn(200) + 2
 
-    lottie_json = load_lottieurl(url_lottie)
-    st_lottie(lottie_json)
-    st_lottie_spinner(lottie_json)
+    # Group data together
+    hist_data = [x1, x2, x3]
+
+    group_labels = ['Group 1', 'Group 2', 'Group 3']
+
+    # Create distplot with custom bin_size
+    fig = ff.create_distplot(
+            hist_data, group_labels, bin_size=[.1, .25, .5])
+
+    # Plot!
+    st.plotly_chart(fig, use_container_width=True)
  
