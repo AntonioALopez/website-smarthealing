@@ -262,8 +262,6 @@ elif tabs == 'Input Tab':
         prediction = requests.get(url,params)
         duracion_baja = prediction.json().get('leave_duration')
         st.title(f" Predicted duration: {int(round(duracion_baja,0))} days")
-
-        
     
 # ================================================================================================================
 elif tabs == 'Results':
@@ -272,7 +270,6 @@ elif tabs == 'Results':
         st.write(st.session_state["params"])
     st.write('Name of option is {}'.format(tabs))
     
-   
     # Add histogram data
     x1 = np.random.randn(200) - 2
     x2 = np.random.randn(200)
@@ -291,13 +288,14 @@ elif tabs == 'Results':
     st.plotly_chart(fig, use_container_width=True)
     
 # ================================================================
+    postal_df = pd.read_csv('./smarthealing_app/data/postal_list.csv', sep = ',', dtype='string') 
     df = pd.DataFrame(
         np.random.randn(250, 2) / [2, 1] + [40.416775,-3.703790],
         columns=['lat', 'lon'])
+    postal_df
 
-    st.map(df)
+    st.map(postal_df)
 # ================================================================
-
     import pydeck as pdk
 
     chart_data = pd.DataFrame(
@@ -332,4 +330,3 @@ elif tabs == 'Results':
             ),
         ],
     ))
-# ================================================================
