@@ -305,7 +305,7 @@ elif tabs == 'Results':
 
     postal_df
     
-    st.map(df)
+    # st.map(d)
 # ================================================================
     import pydeck as pdk
 
