@@ -59,7 +59,7 @@ if "params" not in st.session_state:
 st.markdown('<style>' + open('style.css').read() + '</style>', unsafe_allow_html=True)
 
 with st.sidebar:
-        tabs = on_hover_tabs(tabName=['Dashboard', 'Input Tab', 'Economy'], 
+        tabs = on_hover_tabs(tabName=['Dashboard', 'Input Tab', 'Results'], 
                              iconName=['dashboard', 'money', 'economy'],
                              key="0")
 
@@ -252,8 +252,8 @@ elif tabs == 'Input Tab':
         
     
 # ================================================================================================================
-elif tabs == 'Economy':
-    st.title("Params")
+elif tabs == 'Results':
+    st.title("Results")
     if len(st.session_state["params"]) > 0:
         st.write(st.session_state["params"])
     st.write('Name of option is {}'.format(tabs))
@@ -269,6 +269,5 @@ elif tabs == 'Economy':
     lottie_json = load_lottieurl(url_lottie)
     st_lottie(lottie_json)
 
-    with st_lottie_spinner(lottie_json):
-        t.sleep(5)
-    st.balloons()
+    st_lottie_spinner(lottie_json):
+ 
