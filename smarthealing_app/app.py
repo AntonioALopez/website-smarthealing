@@ -292,9 +292,8 @@ elif tabs == 'Results':
     df = pd.DataFrame(
         np.random.randn(250, 2) / [2, 1] + [40.416775,-3.703790],
         columns=['lat', 'lon'])
-    postal_df['lat']
-    postal_df['lon']
 
+    postal_df  
     st.map(postal_df)
 # ================================================================
     import pydeck as pdk
