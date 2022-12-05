@@ -73,7 +73,7 @@ if tabs =='Dashboard':
     st.title("Dashboard")
     st.write('Name of option is {}'.format(tabs))
     
-    image = Image.open('smarthealing_app/SmartHealing-larg.png')
+    image = Image.open('smarthealing_app/Pngsmarthealing.png')
 
     st.image(image, caption=None, width=250, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
     #displaying the image on streamlit app
