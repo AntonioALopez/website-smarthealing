@@ -94,9 +94,9 @@ if tabs =='Dashboard':
 elif tabs == 'Input Tab':
     image = Image.open('smarthealing_app/Pngsmarthealing.png')
     c1, c2,  = st.columns([1.2, 3])
-    with c1:
-        st.title("Fill this form to get prediction:")
     with c2:
+        st.title("Fill this form to get prediction:")
+    with c1:
         st.image(image, caption=None, use_column_width=True, clamp=True, channels="RGB", output_format="auto")
         #displaying the image on streamlit app
     st.markdown("""---""")
