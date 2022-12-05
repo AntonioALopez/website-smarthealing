@@ -106,19 +106,15 @@ elif tabs == 'Input Tab':
     with c1:
         # Number of leaves per company 
         bajas_empresa = st.number_input('Input number of leaves in company:',min_value=0, max_value=5000000)
-        st.write('You selected: ', bajas_empresa)
-    
     with c2:
         # Number of leaves per worker
         bajas_worker = st.number_input('Input number of leaves of worker:',min_value=0, max_value=5000000)
-        st.write('You selected: ', bajas_worker)
     with c3:
         # CNAE category
         cnae_df = pd.read_csv('./smarthealing_app/data/cnae_list.csv', sep = '.-', dtype='string') 
         cnae_select = st.selectbox('Input CNAE Category:', (cnae_df['Code'] + ' - ' + cnae_df['Description']).tolist())
         cnae = cnae_select[:4]
-        st.write('You selected: ', cnae)
-    
+
     # 2nd Line
     c1, c2 = st.columns(2)   
     with c1:
@@ -126,8 +122,7 @@ elif tabs == 'Input Tab':
         options=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
         day_week = st.select_slider('Select day of the week on leave: ',
             options=options)
-        week_day = options.index(day_week) + 1
-        st.write('You select: ', week_day)     
+        week_day = options.index(day_week) + 1 
     with c2:
         # ICD9 category
         valid_characters = ['M','V','E','m','b','e','1','2','3','4','5','6','7','8','9','0','.']
@@ -148,11 +143,9 @@ elif tabs == 'Input Tab':
             setback = 1
         else:
             setback = 0
-    
     with c2:
         # Number of workers 
         num_workers = st.number_input('Input number of workers in company: ',min_value=0, max_value=5000000)
-        
     with c3:
         # Codigo Postal
         postal_df = pd.read_csv('./smarthealing_app/data/postal_list.csv', sep = ',', dtype='string') 
@@ -160,13 +153,11 @@ elif tabs == 'Input Tab':
         postal = st.selectbox('Input Postal Code', (postal_df['codigopostalid'] + ' - ' + postal_df['provincia'] + ' - ' + postal_df['poblacion']).tolist())
         # Selecting just description from DF, idk why it wasn't working the simple way
         postal = postal.split(' ')[0]
-        st.write('You selected: ',postal)
        
     c1, c2 = st.columns(2)
     with c1: 
         # Day counter
         day_counter = st.number_input('Input number of days on leave: ',min_value=0, max_value=5000000)
-    
     with c2:
         # Multiple jobs
         multi_job_select = st.radio("Does the worker has multiple jobs", ('Yes', 'No'))
@@ -174,18 +165,15 @@ elif tabs == 'Input Tab':
             multi_job = 1
         else:
             multi_job = 0
-        st.write('You selected: ', multi_job)
-    
     st.markdown("""---""")
+    
     c1, c2 = st.columns(2)
     # Type of contract
     with c1:
         contract_df = pd.read_csv('./smarthealing_app/data/contract_list.csv', sep = ',', dtype='string') 
         contract = st.selectbox('Input Contract Type:', (contract_df['clave'] + ' - ' + contract_df['denominacion']).tolist())
         # Selecting just description from DF, idk why it wasn't working the simple way
-        contract = contract[:3]
-        st.write('You selected: ',contract)
-    
+        contract = contract[:3]    
     with c2:
         # Cotization group 
         coti_df = pd.read_csv('./smarthealing_app/data/coti_list.csv', sep = ':', dtype='string') 
@@ -193,7 +181,6 @@ elif tabs == 'Input Tab':
             options=(coti_df['description'].to_list()))
         # Selecting just description from DF, idk why it wasn't working the simple way
         selection_coti = coti_df[coti_df['description']==contribution]['category'].iloc[0]
-        st.write('You selected: ', selection_coti)
     
     # 2nd Line
     c1, c2 = st.columns(2)
@@ -204,8 +191,6 @@ elif tabs == 'Input Tab':
         d1 = date.today()
         d3 = d1 - d0
         result_year = round((d3.days/365),3)
-        st.write('Years working:', result_year)
-    
     with c2:
         # How old is the worker
         a0 = st.date_input(
@@ -213,7 +198,6 @@ elif tabs == 'Input Tab':
         a1 = date.today()
         a3 = a1 - a0
         age = round((a3.days/365),3)
-        st.write('Years working:', age)
     
     c1, c2 = st.columns(2)
     # Month 
@@ -222,12 +206,10 @@ elif tabs == 'Input Tab':
         month_select = st.select_slider('Select month of the year on leave: ',
             options=options)
         month = options.index(month_select) + 1
-        st.write('You select: ', month)
         
     # Week
     with c2:
         week = st.number_input('Select number week of the year on leave: ', min_value=0, max_value=5000000)
-        st.write('You select: ', week)
         
     if st.button(label = 'Calculate'):
         my_bar = st.progress(0)
