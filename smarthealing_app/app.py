@@ -74,11 +74,8 @@ if tabs =='Dashboard':
     st.write('Name of option is {}'.format(tabs))
     
     image = Image.open('smarthealing_app/Pngsmarthealing.png')
-
-    st.image(image, caption=None, width=250, use_column_width=False, clamp=True, channels="RGB", output_format="PNG")
+    st.image(image, caption=None, width=250, use_column_width=False, clamp=True, channels="RGB", output_format="auto")
     #displaying the image on streamlit app
-
-    st.image(image, use_column_width = True,clamp=True)
     
     url_lottie = 'https://assets1.lottiefiles.com/private_files/lf30_y9czxcb9.json'
     def load_lottieurl(url: str):
@@ -95,6 +92,9 @@ if tabs =='Dashboard':
 # ================================================================================================================
 # Tab where we input the data
 elif tabs == 'Input Tab':
+    image = Image.open('smarthealing_app/Pngsmarthealing.png')
+    st.image(image, caption=None, width=250, use_column_width=False, clamp=True, channels="RGB", output_format="auto")
+    #displaying the image on streamlit app
     st.title("Here we are gonna input the data to get the prediction")
     st.write('Name of tab is {}'.format(tabs))
     # with st.form(key='columns_in_form'):
