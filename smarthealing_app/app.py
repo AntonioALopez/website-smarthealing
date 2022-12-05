@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup as bs
 from streamlit_lottie import st_lottie
 from streamlit_lottie import st_lottie_spinner
 import plotly.figure_factory as ff
+import streamlit.components.v1 as components
 from PIL import Image
 
 base = 'https://en.wikipedia.org/'
@@ -72,14 +73,13 @@ if tabs =='Dashboard':
     st.title("Dashboard")
     st.write('Name of option is {}'.format(tabs))
     
-    #opening the image
-    html_for_svg = '<figure><embed type="image/svg+xml" src="smarthealing_app/SmartHealing-Bolg.svg" /></figure>'
-    st.write(html_for_svg, unsafe_allow_html=True)
     image = Image.open('smarthealing_app/SmartHealing-larg.png')
 
+    st.image(image, caption=None, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
     #displaying the image on streamlit app
 
-    st.image(image, caption='Enter any caption here')
+
+    st.image(image, use_column_width = True,clamp=True)
     
     url_lottie = 'https://assets1.lottiefiles.com/private_files/lf30_y9czxcb9.json'
     def load_lottieurl(url: str):
