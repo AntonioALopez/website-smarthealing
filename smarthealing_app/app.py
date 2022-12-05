@@ -95,7 +95,7 @@ elif tabs == 'Input Tab':
     image = Image.open('smarthealing_app/Pngsmarthealing.png')
     c1, a2, a3 = st.columns(3)
     with c1:
-        st.image(image, caption=None, width=250, use_column_width=False, clamp=True, channels="RGB", output_format="auto")
+        st.image(image, caption=None, use_column_width=True, clamp=True, channels="RGB", output_format="auto")
         #displaying the image on streamlit app
         
     st.title("Here we are gonna input the data to get the prediction")
