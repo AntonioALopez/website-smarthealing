@@ -75,7 +75,7 @@ if tabs =='Dashboard':
     
     image = Image.open('smarthealing_app/Pngsmarthealing.png')
 
-    st.image(image, caption=None, width=250, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
+    st.image(image, caption=None, width=250, use_column_width=None, clamp=True, channels="RGB", output_format="PNG")
     #displaying the image on streamlit app
 
 
