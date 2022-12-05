@@ -56,7 +56,8 @@ st.set_page_config(
     initial_sidebar_state="auto",
 )
 #opening the image
-
+html_for_svg = '<figure><embed type="image/svg+xml" src="smarthealing_app/image.svg" /></figure>'
+st.write(html_for_svg, unsafe_allow_html=True)
 image = Image.open('smarthealing_app/SmartHealing-larg.png')
 
 #displaying the image on streamlit app
