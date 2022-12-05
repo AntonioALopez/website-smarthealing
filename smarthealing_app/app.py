@@ -93,7 +93,7 @@ if tabs =='Dashboard':
 # Tab where we input the data
 elif tabs == 'Input Tab':
     image = Image.open('smarthealing_app/Pngsmarthealing.png')
-    c1, c2,  = st.columns([3, 1.2])
+    c1, c2,  = st.columns([1.2, 3])
     with c1:
         st.title("Fill this form to get prediction:")
     with c2:
