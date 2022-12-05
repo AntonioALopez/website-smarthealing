@@ -10,6 +10,20 @@ from streamlit_lottie import st_lottie
 from streamlit_lottie import st_lottie_spinner
 import plotly.figure_factory as ff
 
+from PIL import Image
+
+
+
+#opening the image
+
+image = Image.open('SmartHealing-larg.png')
+
+
+
+#displaying the image on streamlit app
+
+st.image(image, caption='Enter any caption here')
+
 
 base = 'https://en.wikipedia.org/'
 icd9_wiki = 'https://en.wikipedia.org/wiki/List_of_ICD-9_codes'
@@ -278,8 +292,6 @@ elif tabs == 'Results':
     df['Postal Code'] = postal_df['codigopostalid']
     df['lat'] = postal_df.apply(lat, axis=1)
     df['lon'] = postal_df.apply(lon, axis=1)
-
-    df
     
     st.map(df)
 # ================================================================
