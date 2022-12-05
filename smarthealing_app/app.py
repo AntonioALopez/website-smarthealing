@@ -55,14 +55,6 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="auto",
 )
-#opening the image
-html_for_svg = '<figure><embed type="image/svg+xml" src="smarthealing_app/image.svg" /></figure>'
-st.write(html_for_svg, unsafe_allow_html=True)
-image = Image.open('smarthealing_app/SmartHealing-larg.png')
-
-#displaying the image on streamlit app
-
-st.image(image, caption='Enter any caption here')
 
 if "params" not in st.session_state:
     st.session_state['params'] = dict()
@@ -80,12 +72,24 @@ if tabs =='Dashboard':
     st.title("Dashboard")
     st.write('Name of option is {}'.format(tabs))
     
+    #opening the image
+    html_for_svg = '<figure><embed type="image/svg+xml" src="smarthealing_app/image.svg" /></figure>'
+    st.write(html_for_svg, unsafe_allow_html=True)
+    image = Image.open('smarthealing_app/SmartHealing-larg.png')
+
+    #displaying the image on streamlit app
+
+    st.image(image, caption='Enter any caption here')
+
+    
+    
     url_lottie = 'https://assets1.lottiefiles.com/private_files/lf30_y9czxcb9.json'
     def load_lottieurl(url: str):
         r = requests.get(url)
         if r.status_code != 200:
             return None
         return r.json()
+    
 
     lottie_json = load_lottieurl(url_lottie)
     st_lottie(lottie_json)
