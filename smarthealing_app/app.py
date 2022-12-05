@@ -9,21 +9,7 @@ from bs4 import BeautifulSoup as bs
 from streamlit_lottie import st_lottie
 from streamlit_lottie import st_lottie_spinner
 import plotly.figure_factory as ff
-
 from PIL import Image
-
-
-
-#opening the image
-
-image = Image.open('SmartHealing-larg.png')
-
-
-
-#displaying the image on streamlit app
-
-st.image(image, caption='Enter any caption here')
-
 
 base = 'https://en.wikipedia.org/'
 icd9_wiki = 'https://en.wikipedia.org/wiki/List_of_ICD-9_codes'
@@ -69,6 +55,13 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="auto",
 )
+#opening the image
+
+image = Image.open('smarthealing_app/SmartHealing-larg.png')
+
+#displaying the image on streamlit app
+
+st.image(image, caption='Enter any caption here')
 
 if "params" not in st.session_state:
     st.session_state['params'] = dict()
