@@ -73,7 +73,7 @@ if tabs =='Dashboard':
     st.write('Name of option is {}'.format(tabs))
     
     #opening the image
-    html_for_svg = '<figure><embed type="image/svg+xml" src="smarthealing_app/SmartHealing-Bolg..svg" /></figure>'
+    html_for_svg = '<figure><embed type="image/svg+xml" src="smarthealing_app/SmartHealing-Bolg.svg" /></figure>'
     st.write(html_for_svg, unsafe_allow_html=True)
     image = Image.open('smarthealing_app/SmartHealing-larg.png')
 
