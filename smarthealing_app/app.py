@@ -93,18 +93,15 @@ if tabs =='Dashboard':
 # Tab where we input the data
 elif tabs == 'Input Tab':
     image = Image.open('smarthealing_app/Pngsmarthealing.png')
-    c1, c2, c3 = st.columns([3, 1, 2])
+    c1, c2,  = st.columns([3, 1])
     with c1:
-        st.image(image, caption=None, use_column_width=True, clamp=True, channels="RGB", output_format="auto")
-        #displaying the image on streamlit app
+        st.title("Fill this form to get prediction:")
     with c2:
         st.image(image, caption=None, use_column_width=True, clamp=True, channels="RGB", output_format="auto")
         #displaying the image on streamlit app
-    with c3:
-        st.image(image, caption=None, use_column_width=True, clamp=True, channels="RGB", output_format="auto")
-        #displaying the image on streamlit app
+
         
-    st.title("Fill this form to get prediction:")
+    
     # 1st Line
     c1, c2, c3 = st.columns(3)
     with c1:
