@@ -98,7 +98,7 @@ elif tabs == 'Input Tab':
         st.image(image, caption=None, use_column_width=True, clamp=True, channels="RGB", output_format="auto")
         #displaying the image on streamlit app
         
-    st.title("Here we are gonna input the data to get the prediction")
+    st.title("Fill this form to get prediction:")
     st.write('Name of tab is {}'.format(tabs))
     # with st.form(key='columns_in_form'):
     # 1st Line
